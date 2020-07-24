@@ -1,0 +1,24 @@
+\frametitle {Structure of MuonAlignmentAnalyzer}
+\begin{description}
+\item[Generalized: Not Limited to One Algorithm]
+\end{description}
+\hspace{1 cm} \begin{minipage}{\linewidth}
+\scriptsize
+\begin{verbatim}
+module analyzer = MuonAlignmentAnalyzer
+{
+    string algo = "dummy"
+
+    string output = "maa_iteration1.root"
+    string src = "globalMuons"
+    uint32 events = 900
+}
+\end{verbatim}
+\end{minipage}
+
+\vfill
+\begin{itemize}\setlength{\itemsep}{0.25 cm}
+\item MuonAlignmentAnalyzer points to a \textcolor{blue}{MuonAlignmentAlgo}
+\item Sub-class \textcolor{blue}{MuonAlignmentAlgoDummy} does the real work
+\item algo = "dummy" $\to$ selects \textcolor{blue}{MuonAlignmentAlgoDummy}
+\end{itemize}
